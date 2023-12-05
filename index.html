@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Matrices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Matrices</h1>
+
+        <div class="matrix-container">
+            <div class="matrix">
+                <h2>Matriz A</h2>
+                <div class="matrix-scroll">
+                    <table id="matrixA"></table>
+                </div>
+            </div>
+
+            <div class="matrix">
+                <h2>Matriz B</h2>
+                <div class="matrix-scroll">
+                    <table id="matrixB"></table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="matrix">
+            <h2>Pasos Intermedios</h2>
+            <div class="matrix-scroll">
+                <table id="steps"></table>
+            </div>
+        </div>
+
+        <div class="matrix">
+            <h2>Resultado</h2>
+            <div class="matrix-scroll">
+                <table id="result"></table>
+            </div>
+        </div>
+
+        <div id="error-message" class="error-message"></div>
+
+        <div class="controls">
+            <div class="select-container">
+                <label for="structureA">Estructura Matriz A:</label>
+                <select id="structureA" onchange="updateMatrix('matrixA')">
+                    <option value="2x2">2x2</option>
+                    <option value="2x3">2x3</option>
+                    <option value="3x2">3x2</option>
+                    <option value="3x3">3x3</option>
+                    <option value="4x3">4x3</option>
+                </select>
+            </div>
+
+            <div class="select-container">
+                <label for="structureB">Estructura Matriz B:</label>
+                <select id="structureB" onchange="updateMatrix('matrixB')">
+                    <option value="2x2">2x2</option>
+                    <option value="2x3">2x3</option>
+                    <option value="3x2">3x2</option>
+                    <option value="3x3">3x3</option>
+                    <option value="4x3">4x3</option>
+                </select>
+            </div>
+
+            <button onclick="resetPage()">Reiniciar Página</button>   
+            <button onclick="performOperation()">Realizar Operación</button>
+        </div>
+    </div>
+
+    <script src="logica.js"></script>
+</body>
+</html>
